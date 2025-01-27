@@ -1,0 +1,618 @@
+/* CSS */
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Top Navbar */
+.top-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    color: black;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    animation: slideTop 1s infinite alternate;
+}
+@keyframes slideTop {
+    0% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+
+.contact-info span {
+    margin-right: 15px;
+    animation: move-horizontal 5s linear infinite;
+}
+
+.social-icons a {
+    margin-left: 10px;
+    color: black;
+}
+
+@keyframes move-horizontal {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Main Navigation Bar */
+.main-navbar {
+    position: fixed !important;
+    top: 40px !important;
+    left: 0 !important;
+    width: 100% !important;
+    background-color: #007bff !important;
+    z-index: 9999 !important;
+    transition: none !important;
+    will-change: position !important;
+}
+
+/* Ensure navbar stays fixed during scroll */
+body {
+    padding-top: 90px;
+}
+
+/* Prevent any scrolling interference */
+html, body {
+    overflow-x: hidden;
+    scroll-behavior: auto;
+}
+.main-navbar .navbar-brand img {
+    height: 50px;
+}
+
+.main-navbar .nav-link {
+    color: white;
+    padding: 8px 15px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.main-navbar .nav-link:hover {
+    color: yellow;
+}
+
+.main-navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: yellow;
+    transition: width 0.3s ease;
+}
+
+.main-navbar .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .top-navbar {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    .main-navbar .navbar-brand img {
+        height: 40px;
+    }
+
+    .main-navbar .nav-link {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+}
+
+/* Style the logo to be circular */
+.logo img {
+    width: 50px; /* Adjust size as needed */
+    height: 150px; /* Ensure the height matches the width */
+    border-radius: 40%; /* This makes the image circular */
+    object-fit: cover; /* Ensures the image maintains its aspect ratio and fills the circle */
+    transition: transform 0.3s ease-in-out; /* Optional smooth transition */
+}
+
+/* Optional: Add a hover effect */
+.logo img:hover {
+    transform: scale(1.1); /* Slightly scale the image on hover */
+}
+
+
+
+
+
+
+/* Our Services Section */
+.our-services {
+    padding: 60px 0;
+    position: relative;
+    color: white;
+    background-color: #333; /* Fallback color if image fails */
+}
+
+/* Banner Background Image */
+.services-banner {
+    background-image: url('images/appointment\ banner1.jpg'); /* Update with actual path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Overlay on the Banner */
+.services-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for text contrast */
+    z-index: -1;
+}
+
+/* Content inside the Banner */
+.services-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3); /* Slight background behind the text */
+    border-radius: 10px;
+}
+
+.services-content h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.services-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ddd;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .services-content h2 {
+        font-size: 30px;
+    }
+
+    .services-content p {
+        font-size: 16px;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-content h2 {
+        font-size: 24px;
+    }
+
+    .services-content p {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+}
+
+
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .service-box {
+        margin-bottom: 20px;
+    }
+}
+
+/* Banner Section */
+.scroll-banner {
+    background: linear-gradient(135deg, #1e90ff, #28a745, #ffeb3b); /* Blue, Green, and Yellow */
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: none; /* Initially hidden */
+    animation: slideIn 0.5s ease-out;
+}
+
+.scroll-banner p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.scroll-banner a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.scroll-banner a:hover {
+    text-decoration: underline;
+}
+
+/* Animation when the banner appears */
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Show the banner when the class 'show' is added */
+.scroll-banner.show {
+    display: block;
+}
+
+
+/* Image Gallery Section */
+.image-gallery-section {
+    background-color: #f4f4f4;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .image-gallery-section h2 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 30px;
+    color: #28a745; /* Green color */
+    margin-bottom: 20px;
+  }
+  
+  .image-gallery-section p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+    line-height: 1.5;
+  }
+  
+  /* Image Rows */
+  .image-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  
+  .gallery-image {
+    width: 18%;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: cover; /* Ensures the image fits well */
+    cursor: pointer;
+    border: 2px solid #ddd; /* Adding border to images */
+  }
+  
+  /* Hover Effect on Images */
+  .gallery-image:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Soft shadow on hover */
+  }
+  
+  /* Responsive Design */
+  
+  /* For Small Screens (Mobile Phones) */
+  @media (max-width: 600px) {
+    .image-gallery-section h2 {
+      font-size: 24px;
+    }
+  
+    .image-gallery-section p {
+      font-size: 16px;
+    }
+  
+    .image-row {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .gallery-image {
+      width: 80%; /* Make images larger on smaller screens */
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* For Medium Screens (Tablets) */
+  @media (max-width: 900px) {
+    .image-gallery-section h2 {
+      font-size: 26px;
+    }
+  
+    .image-gallery-section p {
+      font-size: 18px;
+    }
+  
+    .image-row {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .gallery-image {
+      width: 45%; /* Two images per row on medium screens */
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* For Large Screens (Desktops) */
+  @media (min-width: 901px) {
+    .gallery-image {
+      width: 18%; /* Five images per row on large screens */
+    }
+  }
+  
+  
+  
+  
+
+  /* Social Media Connect Banner */
+.social-connect-banner {
+    background-color: #007bff;  /* Blue background */
+    padding: 40px 20px;
+    text-align: center;
+    color: white;
+  }
+  
+  .social-connect-banner h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .social-icon {
+    display: inline-block;
+    font-size: 30px;
+    color: white; /* Ensure icons are white by default */
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 50%;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    color: #28a745;  /* Green hover effect */
+    background-color: white;  /* Make the background white on hover */
+  }
+  
+  .social-icon.facebook {
+    color: #1877f2;  /* Facebook blue */
+  }
+  
+  .social-icon.instagram {
+    color: #e1306c;  /* Instagram pink */
+  }
+  
+  .social-icon.twitter {
+    color: #1da1f2;  /* Twitter blue */
+  }
+  
+  .social-icon.linkedin {
+    color: #0077b5;  /* LinkedIn blue */
+  }
+  
+  .social-icon i {
+    margin: 0;
+    font-size: 24px;  /* Make the icons smaller */
+  }
+  
+
+  /* Footer Styling */
+.footer {
+    background-color: #343a40; /* Dark background for footer */
+    color: white;
+    padding: 40px 20px;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-section h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  .footer-section p, .footer-section ul {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .footer-section ul {
+    padding-left: 20px;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section a {
+    color: #28a745; /* Green links */
+    text-decoration: none;
+  }
+  
+  .footer-section a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #23272b; /* Darker background for bottom section */
+    color: #adb5bd;
+    font-size: 14px;
+  }
+  
+  /* Responsive design for small screens */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .footer-section {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+
+
+/* Container for the whole appointment form */
+.appointment-container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-heading {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Style for each field in the form */
+.appointment-field {
+    margin-bottom: 15px;
+}
+
+/* Labels for the fields */
+.appointment-label {
+    font-size: 1.1em;
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Input fields */
+.appointment-input,
+.appointment-select,
+.appointment-textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+/* Textarea styling */
+.appointment-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Focus effect for inputs and selects */
+.appointment-input:focus,
+.appointment-select:focus,
+.appointment-textarea:focus {
+    border-color: #f39c12;
+    outline: none;
+}
+
+/* Style for the submit button */
+.appointment-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #f39c12;
+    border: none;
+    color: white;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for the submit button */
+.appointment-submit:hover {
+    background-color: green;
+}
+
+/* Status message */
+.appointment-status {
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #28a745; /* Green color for success */
+    text-align: center;
+}
+
+/* Mobile responsiveness: Ensure it's usable on small screens */
+@media (max-width: 600px) {
+    .appointment-container {
+        padding: 15px;
+    }
+
+    .appointment-heading {
+        font-size: 1.8em;
+    }
+
+    .appointment-input,
+    .appointment-select,
+    .appointment-textarea,
+    .appointment-submit {
+        font-size: 1em;
+    }
+}
+

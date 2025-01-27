@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="home.css">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN (for icons) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+        --primary-color: #2196F3;
+        --secondary-color: #4CAF50;
+    }
+    .navbar-brand {
+        color: var(--primary-color) !important;
+        font-weight: bold;
+    }
+    .newsletter-hero {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        padding: 100px 0;
+        text-align: center;
+    }
+    .newsletter-card {
+        transition: transform 0.3s ease;
+    }
+    .newsletter-card:hover {
+        transform: scale(1.05);
+    }
+    #newsletterForm {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .subscription-success {
+        display: none;
+        color: var(--secondary-color);
+    }
+    .archive-section {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+</style>
+
+    
+</head>
+<body>
+    <!-- Top Navbar -->
+    <div class="top-navbar">
+        <div class="contact-info">
+            <span><i class="fas fa-phone"></i>  +256 (0) 393 241 668 </span>
+            <span><i class="fas fa-envelope"></i> theroyalcmc@gmail.com</span>
+        </div>
+        <div class="social-icons">
+            <a href="#facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#linkedin"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <nav class="main-navbar navbar navbar-expand-lg">
+        <div class="container">
+            <a class="logo navbar-brand" href="#">
+                <img src="images/ROYAL LOGO.png" alt="Company Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Our Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="specialists.html">Specialists</a></li>
+                    <li class="nav-item"><a class="nav-link" href="info.html">Info & Updates</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="callbook.html">Call To Book</a></li>
+                    <li class="nav-item"><a class="nav-link" href="News Letters.html">News Letters</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <br>
+    <br>
+    <br>
+    <!-- Newsletter Hero -->
+    <section id="home" class="newsletter-hero">
+        <div class="container">
+            <h1>The Royal Children’s Medical Newsletter</h1>
+            <p class="lead">Stay Informed About Pediatric Health and Research</p>
+        </div>
+    </section>
+
+    <!-- Newsletter Subscription -->
+    <section id="subscribe" class="container py-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-center mb-4">Subscribe to Our Newsletter</h2>
+                        <form id="newsletterForm">
+                            <div class="mb-3">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" id="fullName" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" id="emailAddress" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Interests</label>
+                                <select id="interests" class="form-select" multiple>
+                                    <option value="pediatric-research">Pediatric Research</option>
+                                    <option value="child-health">Child Health Tips</option>
+                                    <option value="medical-advances">Medical Advances</option>
+                                    <option value="hospital-events">Hospital Events</option>
+                                </select>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" id="consent" class="form-check-input" required>
+                                <label class="form-check-label">I consent to receive newsletters</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+                        </form>
+                        <div id="subscriptionSuccess" class="subscription-success text-center mt-3">
+                            <h4>Thank You for Subscribing!</h4>
+                            <p>You'll receive our latest updates soon.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Archive -->
+    <section id="archive" class="container py-5">
+        <h2 class="text-center mb-4">Newsletter Archive</h2>
+        <div class="row" id="newsletterArchive">
+            <!-- Newsletter items will be dynamically populated -->
+        </div>
+    </section>
+
+
+
+    <section class="find-specialist-section">
+        <div class="container">
+            <div class="specialist-content">
+                <!-- Right side (Text and Button) -->
+                <div class="right-side">
+                    <h2>Find a Specialist</h2>
+                    <p>The team at The Royal Children Medical Centre values the importance of strong patient-provider relationships, dedicating time to educate, counsel, and support individuals through complex health challenges.</p>
+                    <p>Discover the exceptional healthcare professionals at RCMC, and don’t hesitate to schedule an appointment with them.</p>
+                    <a href="specialists.html" class="take-a-look-btn">
+                        Take a Look <span>&#8594;</span>
+                    </a>
+                </div>
+        
+                <!-- Left side (Image Slider) -->
+                <div class="left-side">
+                    <div class="image-slider-container">
+                        <div class="image-slider">
+                            <img src="images/doctor1.jpg" alt="Specialist 1" class="slider-image">
+                            <img src="images/doctor2.jpg" alt="Specialist 2" class="slider-image">
+                            <img src="images/doctor3.jpg" alt="Specialist 3" class="slider-image">
+                            <img src="images/doctor4.jpg" alt="Specialist 4" class="slider-image">
+                        </div>
+                    </div>
+                    <div class="dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+      <section class="info-updates-section">
+        <div class="container">
+          <h2>INFO & UPDATES</h2>
+          <div class="info-blocks">
+            <!-- Block 1 -->
+            <div class="info-block">
+              <img src="images/info1.jpg" alt="Info 1" class="info-image">
+              <h3>Update Title 1</h3>
+              <p>Here is a brief description of the update or info. It should summarize the key points.</p>
+              <a href="info.html" class="read-more">
+                Read More <span>&#8594;</span>
+              </a>
+            </div>
+      
+            <!-- Block 2 -->
+            <div class="info-block">
+              <img src="images/info2.jpg" alt="Info 2" class="info-image">
+              <h3>Update Title 2</h3>
+              <p>Here is a brief description of the update or info. It should summarize the key points.</p>
+              <a href="info.html" class="read-more">
+                Read More <span>&#8594;</span>
+              </a>
+            </div>
+      
+            <!-- Block 3 -->
+            <div class="info-block">
+              <img src="images/info3.jpg" alt="Info 3" class="info-image">
+              <h3>Update Title 3</h3>
+              <p>Here is a brief description of the update or info. It should summarize the key points.</p>
+              <a href="info.html" class="read-more">
+                Read More <span>&#8594;</span>
+              </a>
+            </div>
+      
+            <!-- Block 4 -->
+            <div class="info-block">
+              <img src="images/info4.jpg" alt="Info 4" class="info-image">
+              <h3>Update Title 4</h3>
+              <p>Here is a brief description of the update or info. It should summarize the key points.</p>
+              <a href="info.html" class="read-more">
+                Read More <span>&#8594;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="social-connect-banner">
+        <div class="container">
+          <h2>Let's Connect on Social Media</h2>
+          <div class="social-icons">
+            <a href="#" class="social-icon facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-icon twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon linkedin">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="footer-container">
+          <!-- Contact Info Section -->
+      <div class="footer-section contact-info">
+        <h3>Contact Info</h3>
+        <p><strong>Location:</strong>  GAYAZA ROAD MILE, 6 </p>
+        <p><strong>P. O. Box:</strong>  13976 Kampala, Uganda</p>
+        <p><strong>Tel:</strong> +256(0)393241668</p>
+        <p><strong>Email:</strong> <a href="theroyalcmc@gmail.com">theroyalcmc@gmail.com</a></p>
+      </div>
+  
+      <!-- Latest Info & Updates Section -->
+      <div class="footer-section latest-updates">
+        <h3>Latest Info & Updates</h3>
+        <ul>
+          <li><a href="about.html">The Royal Children Medical Centre Staff Completes Transformative Soft Skills Training</a></li>
+          <li><a href="info.html">Physiotherapy Essentials: Simple Exercises for Better Health</a></li>
+          <li><a href="info.html">Maternal Wellness: Simple Steps Every Expectant Mother Should Know</a></li>
+        </ul>
+      </div>
+  
+      <!-- Quick Links Section -->
+      <div class="footer-section quick-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="specialists.html">Specialists</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="#">Report Concerns</a></li>
+        </ul>
+      </div>
+    </div>
+      
+        <!-- Footer Bottom Section -->
+        <div class="footer-bottom">
+          <p>&copy; 2025 The Royal Children’s Medical Centre. All rights reserved.</p>
+        </div>
+      </footer>
+
+
+
+    <script src="news letters.js">
+        document.addEventListener('DOMContentLoaded', function() {
+            const newsletterForm = document.getElementById('newsletterForm');
+            const subscriptionSuccess = document.getElementById('subscriptionSuccess');
+            const newsletterArchive = document.getElementById('newsletterArchive');
+
+            // Smooth scrolling for navbar links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const fullName = document.getElementById('fullName').value;
+                const email = document.getElementById('emailAddress').value;
+                const interests = Array.from(document.getElementById('interests').selectedOptions)
+                    .map(option => option.value);
+                const consent = document.getElementById('consent').checked;
+
+                if (!fullName || !email || interests.length === 0 || !consent) {
+                    alert('Please complete all required fields.');
+                    return;
+                }
+
+                setTimeout(() => {
+                    newsletterForm.style.display = 'none';
+                    subscriptionSuccess.style.display = 'block';
+                    
+                    const subscriberData = {
+                        fullName,
+                        email,
+                        interests,
+                        subscribedAt: new Date().toISOString()
+                    };
+                    
+                    localStorage.setItem('newsletterSubscriber', JSON.stringify(subscriberData));
+                }, 500);
+            });
+
+            const newsletterItems = [
+                {
+                    title: 'Breakthrough in Pediatric Cancer Research',
+                    date: '2024-01-15',
+                    summary: 'Latest advancements in childhood cancer treatment.',
+                    category: 'Medical Advances'
+                },
+                {
+                    title: 'Child Health Tips for Winter',
+                    date: '2023-12-10',
+                    summary: 'Keeping your children healthy during cold seasons.',
+                    category: 'Child Health'
+                },
+                {
+                    title: 'Annual Hospital Research Symposium',
+                    date: '2023-11-22',
+                    summary: 'Highlights from our pediatric research conference.',
+                    category: 'Hospital Events'
+                }
+            ];
+
+            newsletterItems.forEach(item => {
+                const card = document.createElement('div');
+                card.classList.add('col-md-4', 'mb-4');
+                card.innerHTML = `
+                    <div class="card newsletter-card">
+                        <div class="card-body">
+                            <h5 class="card-title">${item.title}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">${item.date}</h6>
+                            <p class="card-text">${item.summary}</p>
+                            <span class="badge bg-primary">${item.category}</span>
+                        </div>
+                    </div>
+                `;
+                newsletterArchive.appendChild(card);
+            });
+        });
+    </script>
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,837 @@
+
+/* CSS */
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Top Navbar */
+.top-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    color: black;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    animation: slideTop 1s infinite alternate;
+}
+@keyframes slideTop {
+    0% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+
+.contact-info span {
+    margin-right: 15px;
+    animation: move-horizontal 5s linear infinite;
+}
+
+.social-icons a {
+    margin-left: 10px;
+    color: black;
+}
+
+@keyframes move-horizontal {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Main Navigation Bar */
+.main-navbar {
+    position: fixed !important;
+    top: 40px !important;
+    left: 0 !important;
+    width: 100% !important;
+    background-color: #007bff !important;
+    z-index: 9999 !important;
+    transition: none !important;
+    will-change: position !important;
+}
+
+/* Ensure navbar stays fixed during scroll */
+body {
+    padding-top: 90px;
+}
+
+/* Prevent any scrolling interference */
+html, body {
+    overflow-x: hidden;
+    scroll-behavior: auto;
+}
+.main-navbar .navbar-brand img {
+    height: 50px;
+}
+
+.main-navbar .nav-link {
+    color: white;
+    padding: 8px 15px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.main-navbar .nav-link:hover {
+    color: yellow;
+}
+
+.main-navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: yellow;
+    transition: width 0.3s ease;
+}
+
+.main-navbar .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .top-navbar {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    .main-navbar .navbar-brand img {
+        height: 40px;
+    }
+
+    .main-navbar .nav-link {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+}
+
+/* Style the logo to be circular */
+.logo img {
+    width: 50px; /* Adjust size as needed */
+    height: 150px; /* Ensure the height matches the width */
+    border-radius: 40%; /* This makes the image circular */
+    object-fit: cover; /* Ensures the image maintains its aspect ratio and fills the circle */
+    transition: transform 0.3s ease-in-out; /* Optional smooth transition */
+}
+
+/* Optional: Add a hover effect */
+.logo img:hover {
+    transform: scale(1.1); /* Slightly scale the image on hover */
+}
+
+
+
+
+
+
+/* Our Services Section */
+.our-services {
+    padding: 60px 0;
+    position: relative;
+    color: white;
+    background-color: #333; /* Fallback color if image fails */
+}
+
+/* Banner Background Image */
+.services-banner {
+    background-image: url('images/service\ banner.jpg'); /* Update with actual path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Overlay on the Banner */
+.services-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for text contrast */
+    z-index: -1;
+}
+
+/* Content inside the Banner */
+.services-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3); /* Slight background behind the text */
+    border-radius: 10px;
+}
+
+.services-content h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.services-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ddd;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .services-content h2 {
+        font-size: 30px;
+    }
+
+    .services-content p {
+        font-size: 16px;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-content h2 {
+        font-size: 24px;
+    }
+
+    .services-content p {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+}
+
+
+/* Service Section */
+.our-services {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+/* Individual Service Box */
+.service-box {
+    background-color: white;
+    border: 2px solid #28a745; /* Green border */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect for Service Box */
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Service Image */
+.service-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Service Title */
+.service-box h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Service Description */
+.service-box p {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* Learn More Button */
+.learn-more-btn {
+    font-size: 16px;
+    color: #28a745;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid #28a745;
+    border-radius: 5px;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.learn-more-btn:hover {
+    background-color: #28a745;
+    color: white;
+}
+
+/* Icon Style */
+.learn-more-btn .icon {
+    margin-left: 8px;
+    font-size: 18px;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .service-box {
+        margin-bottom: 20px;
+    }
+}
+
+/* Banner Section */
+.scroll-banner {
+    background: linear-gradient(135deg, #1e90ff, #28a745, #ffeb3b); /* Blue, Green, and Yellow */
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: none; /* Initially hidden */
+    animation: slideIn 0.5s ease-out;
+}
+
+.scroll-banner p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.scroll-banner a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.scroll-banner a:hover {
+    text-decoration: underline;
+}
+
+/* Animation when the banner appears */
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Show the banner when the class 'show' is added */
+.scroll-banner.show {
+    display: block;
+}
+
+
+/* Image Gallery Section */
+.image-gallery-section {
+    background-color: #f4f4f4;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .image-gallery-section h2 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 30px;
+    color: #28a745; /* Green color */
+    margin-bottom: 20px;
+  }
+  
+  .image-gallery-section p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+    line-height: 1.5;
+  }
+  
+  /* Image Rows */
+  .image-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  
+  .gallery-image {
+    width: 18%;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: cover; /* Ensures the image fits well */
+    cursor: pointer;
+    border: 2px solid #ddd; /* Adding border to images */
+  }
+  
+  /* Hover Effect on Images */
+  .gallery-image:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Soft shadow on hover */
+  }
+  
+  /* Responsive Design */
+  
+  /* For Small Screens (Mobile Phones) */
+  @media (max-width: 600px) {
+    .image-gallery-section h2 {
+      font-size: 24px;
+    }
+  
+    .image-gallery-section p {
+      font-size: 16px;
+    }
+  
+    .image-row {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .gallery-image {
+      width: 80%; /* Make images larger on smaller screens */
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* For Medium Screens (Tablets) */
+  @media (max-width: 900px) {
+    .image-gallery-section h2 {
+      font-size: 26px;
+    }
+  
+    .image-gallery-section p {
+      font-size: 18px;
+    }
+  
+    .image-row {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .gallery-image {
+      width: 45%; /* Two images per row on medium screens */
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* For Large Screens (Desktops) */
+  @media (min-width: 901px) {
+    .gallery-image {
+      width: 18%; /* Five images per row on large screens */
+    }
+  }
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General Styling for Section */
+.find-specialist-section {
+    padding: 60px 20px;
+  }
+  
+  .specialist-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Right Side - Text and Button */
+  .right-side {
+    flex: 1;
+    padding-right: 20px;
+    text-align: left;
+  }
+  
+  .right-side h2 {
+    font-family: "Times New Roman", Times, serif;
+    color: #28a745;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .right-side p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 18px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .take-a-look-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .take-a-look-btn:hover {
+    background-color: #218838;
+  }
+  
+  .take-a-look-btn span {
+    margin-left: 10px;
+    font-size: 20px;
+  }
+  
+  /* Left Side - Image Slider */
+  .left-side {
+    flex: 1;
+    padding-left: 20px;
+    overflow: hidden;
+  }
+  
+  .image-slider-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    overflow: hidden;
+  }
+  
+  .image-slider {
+    display: flex;
+    width: 400%; /* 4 images, each taking 100% width */
+    animation: slide 16s infinite; /* Animation duration adjusted to match slide time */
+  }
+  
+  .slider-image {
+    width: 25%; /* Each image takes 25% of the container width */
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  
+  /* Dots for Image Indicator */
+  .dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dot.active {
+    background-color: #28a745;
+  }
+  
+  /* Image Slide Animation */
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-25%); /* Shift to show 2nd image */
+    }
+    50% {
+      transform: translateX(-50%); /* Shift to show 3rd image */
+    }
+    75% {
+      transform: translateX(-75%); /* Shift to show 4th image */
+    }
+    100% {
+      transform: translateX(0); /* Reset to the first image */
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .specialist-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .left-side, .right-side {
+      padding: 0;
+    }
+  
+    .image-slider-container {
+      height: 200px;
+    }
+  
+    .take-a-look-btn {
+      font-size: 16px;
+      padding: 10px 20px;
+    }
+  }
+  /* INFO & UPDATES Section Styling */
+.info-updates-section {
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+  }
+  
+  .info-updates-section h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 40px;
+  }
+  
+  .info-blocks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  .info-block {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .info-block:hover {
+    transform: translateY(-10px);
+  }
+  
+  .info-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .info-block h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .info-block p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .read-more {
+    font-size: 18px;
+    color: #28a745;  /* Green color */
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease;
+  }
+  
+  .read-more:hover {
+    color: #218838;  /* Darker green when hovered */
+  }
+  
+  .read-more span {
+    margin-left: 8px;
+    font-size: 22px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .info-blocks {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .info-blocks {
+      grid-template-columns: 1fr;
+    }
+  
+    .info-block h3 {
+      font-size: 20px;
+    }
+  
+    .info-block p {
+      font-size: 14px;
+    }
+  
+    .read-more {
+      font-size: 16px;
+    }
+  }
+  
+
+  /* Social Media Connect Banner */
+.social-connect-banner {
+    background-color: #007bff;  /* Blue background */
+    padding: 40px 20px;
+    text-align: center;
+    color: white;
+  }
+  
+  .social-connect-banner h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .social-icon {
+    display: inline-block;
+    font-size: 30px;
+    color: white; /* Ensure icons are white by default */
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 50%;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    color: #28a745;  /* Green hover effect */
+    background-color: white;  /* Make the background white on hover */
+  }
+  
+  .social-icon.facebook {
+    color: #1877f2;  /* Facebook blue */
+  }
+  
+  .social-icon.instagram {
+    color: #e1306c;  /* Instagram pink */
+  }
+  
+  .social-icon.twitter {
+    color: #1da1f2;  /* Twitter blue */
+  }
+  
+  .social-icon.linkedin {
+    color: #0077b5;  /* LinkedIn blue */
+  }
+  
+  .social-icon i {
+    margin: 0;
+    font-size: 24px;  /* Make the icons smaller */
+  }
+  
+
+  /* Footer Styling */
+.footer {
+    background-color: #343a40; /* Dark background for footer */
+    color: white;
+    padding: 40px 20px;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-section h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  .footer-section p, .footer-section ul {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .footer-section ul {
+    padding-left: 20px;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section a {
+    color: #28a745; /* Green links */
+    text-decoration: none;
+  }
+  
+  .footer-section a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #23272b; /* Darker background for bottom section */
+    color: #adb5bd;
+    font-size: 14px;
+  }
+  
+  /* Responsive design for small screens */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .footer-section {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+  

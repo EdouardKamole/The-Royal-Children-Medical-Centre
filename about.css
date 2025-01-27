@@ -1,0 +1,966 @@
+/* CSS */
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Top Navbar */
+.top-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    color: black;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    animation: slideTop 1s infinite alternate;
+}
+@keyframes slideTop {
+    0% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+
+.contact-info span {
+    margin-right: 15px;
+    animation: move-horizontal 5s linear infinite;
+}
+
+.social-icons a {
+    margin-left: 10px;
+    color: black;
+}
+
+@keyframes move-horizontal {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Main Navigation Bar */
+.main-navbar {
+    position: fixed !important;
+    top: 40px !important;
+    left: 0 !important;
+    width: 100% !important;
+    background-color: #007bff !important;
+    z-index: 9999 !important;
+    transition: none !important;
+    will-change: position !important;
+}
+
+/* Ensure navbar stays fixed during scroll */
+body {
+    padding-top: 90px;
+}
+
+/* Prevent any scrolling interference */
+html, body {
+    overflow-x: hidden;
+    scroll-behavior: auto;
+}
+.main-navbar .navbar-brand img {
+    height: 50px;
+}
+
+.main-navbar .nav-link {
+    color: white;
+    padding: 8px 15px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.main-navbar .nav-link:hover {
+    color: yellow;
+}
+
+.main-navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: yellow;
+    transition: width 0.3s ease;
+}
+
+.main-navbar .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .top-navbar {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    .main-navbar .navbar-brand img {
+        height: 40px;
+    }
+
+    .main-navbar .nav-link {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+}
+
+/* Style the logo to be circular */
+.logo img {
+    width: 50px; /* Adjust size as needed */
+    height: 150px; /* Ensure the height matches the width */
+    border-radius: 40%; /* This makes the image circular */
+    object-fit: cover; /* Ensures the image maintains its aspect ratio and fills the circle */
+    transition: transform 0.3s ease-in-out; /* Optional smooth transition */
+}
+
+/* Optional: Add a hover effect */
+.logo img:hover {
+    transform: scale(1.1); /* Slightly scale the image on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* General Styling for Section */
+.find-specialist-section {
+    padding: 60px 20px;
+  }
+  
+  .specialist-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Right Side - Text and Button */
+  .right-side {
+    flex: 1;
+    padding-right: 20px;
+    text-align: left;
+  }
+  
+  .right-side h2 {
+    font-family: "Times New Roman", Times, serif;
+    color: #28a745;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .right-side p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 18px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .take-a-look-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .take-a-look-btn:hover {
+    background-color: #218838;
+  }
+  
+  .take-a-look-btn span {
+    margin-left: 10px;
+    font-size: 20px;
+  }
+  
+  /* Left Side - Image Slider */
+  .left-side {
+    flex: 1;
+    padding-left: 20px;
+    overflow: hidden;
+  }
+  
+  .image-slider-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    overflow: hidden;
+  }
+  
+  .image-slider {
+    display: flex;
+    width: 400%; /* 4 images, each taking 100% width */
+    animation: slide 16s infinite; /* Animation duration adjusted to match slide time */
+  }
+  
+  .slider-image {
+    width: 25%; /* Each image takes 25% of the container width */
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  
+  /* Dots for Image Indicator */
+  .dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dot.active {
+    background-color: #28a745;
+  }
+  
+  /* Image Slide Animation */
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-25%); /* Shift to show 2nd image */
+    }
+    50% {
+      transform: translateX(-50%); /* Shift to show 3rd image */
+    }
+    75% {
+      transform: translateX(-75%); /* Shift to show 4th image */
+    }
+    100% {
+      transform: translateX(0); /* Reset to the first image */
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .specialist-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .left-side, .right-side {
+      padding: 0;
+    }
+  
+    .image-slider-container {
+      height: 200px;
+    }
+  
+    .take-a-look-btn {
+      font-size: 16px;
+      padding: 10px 20px;
+    }
+  }
+  /* INFO & UPDATES Section Styling */
+.info-updates-section {
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+  }
+  
+  .info-updates-section h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 40px;
+  }
+  
+  .info-blocks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  .info-block {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .info-block:hover {
+    transform: translateY(-10px);
+  }
+  
+  .info-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .info-block h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .info-block p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .read-more {
+    font-size: 18px;
+    color: #28a745;  /* Green color */
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease;
+  }
+  
+  .read-more:hover {
+    color: #218838;  /* Darker green when hovered */
+  }
+  
+  .read-more span {
+    margin-left: 8px;
+    font-size: 22px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .info-blocks {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .info-blocks {
+      grid-template-columns: 1fr;
+    }
+  
+    .info-block h3 {
+      font-size: 20px;
+    }
+  
+    .info-block p {
+      font-size: 14px;
+    }
+  
+    .read-more {
+      font-size: 16px;
+    }
+  }
+  
+
+  /* Social Media Connect Banner */
+.social-connect-banner {
+    background-color: #007bff;  /* Blue background */
+    padding: 40px 20px;
+    text-align: center;
+    color: white;
+  }
+  
+  .social-connect-banner h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .social-icon {
+    display: inline-block;
+    font-size: 30px;
+    color: white; /* Ensure icons are white by default */
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 50%;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    color: #28a745;  /* Green hover effect */
+    background-color: white;  /* Make the background white on hover */
+  }
+  
+  .social-icon.facebook {
+    color: #1877f2;  /* Facebook blue */
+  }
+  
+  .social-icon.instagram {
+    color: #e1306c;  /* Instagram pink */
+  }
+  
+  .social-icon.twitter {
+    color: #1da1f2;  /* Twitter blue */
+  }
+  
+  .social-icon.linkedin {
+    color: #0077b5;  /* LinkedIn blue */
+  }
+  
+  .social-icon i {
+    margin: 0;
+    font-size: 24px;  /* Make the icons smaller */
+  }
+  
+
+  /* Footer Styling */
+.footer {
+    background-color: #343a40; /* Dark background for footer */
+    color: white;
+    padding: 40px 20px;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-section h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  .footer-section p, .footer-section ul {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .footer-section ul {
+    padding-left: 20px;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section a {
+    color: #28a745; /* Green links */
+    text-decoration: none;
+  }
+  
+  .footer-section a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #23272b; /* Darker background for bottom section */
+    color: #adb5bd;
+    font-size: 14px;
+  }
+  
+  /* Responsive design for small screens */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .footer-section {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+
+
+
+
+
+  /* About KHL Section */
+.about-khl-section {
+    background-color: #f4f4f4; /* Light background */
+    padding: 40px 20px; /* Add padding around the section */
+    font-family: 'Arial', sans-serif; /* Clean font */
+}
+
+.about-khl-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Ensures responsive design */
+}
+
+.left-side {
+    width: 50%; /* Left side takes 50% of the width */
+    padding-right: 20px; /* Space between text and image */
+}
+
+.left-side h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.left-side p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.right-side {
+    width: 50%; /* Right side takes 50% of the width */
+}
+
+.right-side img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Slight border-radius for a professional look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    transition: transform 0.3s ease-in-out; /* Optional: smooth zoom effect */
+}
+
+.right-side img:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .about-khl-content {
+        flex-direction: column; /* Stacks the content on smaller screens */
+        text-align: center; /* Centers the text */
+    }
+
+    .left-side, .right-side {
+        width: 100%; /* Each side takes full width on mobile */
+        margin-bottom: 20px; /* Adds space between the elements */
+    }
+
+    .left-side h2 {
+        font-size: 28px; /* Adjust font size for mobile */
+    }
+
+    .left-side p {
+        font-size: 16px; /* Adjust paragraph font size for mobile */
+    }
+}
+
+
+
+/* Mission & Vision Section with Banner Background */
+.mission-vision-section .banner {
+    background-image: url('images/about\ banner2.jpg'); /* Add your banner background image */
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px; /* Space around the content */
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px; /* Ensures the banner has a consistent height */
+}
+
+.mission-vision-section .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mission-vision-section .mission-vision-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    max-width: 1200px;
+}
+
+/* Mission and Vision content styling */
+.mission-vision-section .mission,
+.mission-vision-section .vision {
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.mission-vision-section .mission:hover,
+.mission-vision-section .vision:hover {
+    transform: translateY(-10px); /* Adds a hover effect */
+}
+
+.mission-vision-section .icon {
+    font-size: 50px;
+    color: #007bff; /* Icon color */
+    margin-right: 20px;
+}
+
+.mission-vision-section .text h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.mission-vision-section .text p {
+    font-size: 16px;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mission-vision-section .mission-vision-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .mission-vision-section .mission,
+    .mission-vision-section .vision {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+
+    .mission-vision-section .icon {
+        font-size: 40px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .mission-vision-section .text h3 {
+        font-size: 22px;
+    }
+
+    .mission-vision-section .text p {
+        font-size: 14px;
+    }
+}
+
+
+/* Core Values Section */
+.core-values {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.core-values .section-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #007bff;
+}
+
+.core-values-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.core-value {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 350px;
+}
+
+.core-value-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.core-value-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.core-value-description {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .core-values {
+        padding: 40px 20px;
+    }
+
+    .core-values .section-title {
+        font-size: 25px;
+    }
+
+    .core-values-list {
+        grid-template-columns: 1fr;
+    }
+
+    .core-value {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .core-value-image {
+        width: 70px;
+        height: 70px;
+    }
+
+    .core-value-title {
+        font-size: 20px;
+    }
+
+    .core-value-description {
+        font-size: 12px;
+    }
+}
+
+
+
+/* KHL Leadership Section */
+.khl-leadership {
+    padding: 60px 0;
+    background-color: #f4f7f9;
+}
+
+.khl-leadership .section-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    color: #2b3a42;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 4px solid #007bff;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* Profile Card */
+.profile-card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    margin-bottom: 40px;
+    overflow: hidden;
+    transform: scale(1);
+}
+
+.profile-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.profile-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #007bff;
+}
+
+/* Profile Image */
+.profile-image {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid #007bff;
+}
+
+/* Leader Name */
+.leader-name {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.leader-name:hover {
+    color: #007bff;
+}
+
+/* Leader Role */
+.leader-role {
+    font-size: 18px;
+    color: #6c757d;
+    margin-bottom: 15px;
+}
+
+/* Read Bio Button */
+.read-bio-btn {
+    font-size: 18px;
+    color: #007bff;
+    font-weight: 600;
+    background-color: transparent;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.read-bio-btn .plus-icon {
+    margin-left: 8px;
+    font-size: 22px;
+}
+
+.read-bio-btn:hover {
+    color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* Bio Content */
+.bio-content {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-top: 1px solid #f1f1f1;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+}
+
+/* When bio is expanded, show content */
+.collapse.show {
+    max-height: 500px;
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-card {
+        margin-bottom: 30px;
+        padding: 20px;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .leader-name {
+        font-size: 22px;
+    }
+
+    .leader-role {
+        font-size: 16px;
+    }
+
+    .read-bio-btn {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .khl-leadership .section-title {
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .profile-card {
+        padding: 15px;
+    }
+    
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .leader-name {
+        font-size: 20px;
+    }
+
+    .leader-role {
+        font-size: 14px;
+    }
+
+    .read-bio-btn {
+        font-size: 14px;
+    }
+}
+
+  

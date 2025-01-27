@@ -1,0 +1,201 @@
+.navbar {
+    background-color: #007bff !important; /* Blue background */
+    padding: 0.6rem 1rem; /* Reduced padding */
+  }
+
+  .navbar .navbar-brand {
+    font-size: 1.3rem; /* Slightly smaller brand text */
+    color: #ffffff !important; /* White text */
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .navbar .navbar-brand:hover {
+    color: #f8f9fa !important; /* Lighter white on hover */
+    text-decoration: none;
+  }
+
+  .navbar .navbar-nav {
+    flex-wrap: nowrap; /* Prevent wrapping of links */
+  }
+
+  .navbar .navbar-nav .nav-link {
+    color: #ffffff !important; /* White text for links */
+    font-size: 0.9rem; /* Reduced font size */
+    font-weight: 500;
+    padding: 0.5rem 0.8rem; /* Reduced padding for better fit */
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+
+  .navbar .navbar-nav .nav-link:hover {
+    color: #007bff !important; /* Blue text on hover */
+    background-color: #ffffff !important; /* Light background on hover */
+    border-radius: 5px;
+  }
+
+  .navbar .navbar-toggler {
+    border: none;
+  }
+
+  .navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.2));
+  }
+
+  .navbar .navbar-collapse {
+    justify-content: flex-end;
+    background-color: #007bff !important; /* Blue dropdown background */
+  }
+
+  .navbar .nav-item .nav-link.active {
+    background-color: #ffffff !important; /* White background for active link */
+    color: #007bff !important; /* Blue text for active link */
+    border-radius: 5px;
+  }
+
+  /* Responsive Navbar */
+  @media (max-width: 992px) {
+    .navbar .navbar-nav {
+      flex-direction: column; /* Stack links vertically on small screens */
+    }
+
+    .navbar .navbar-nav .nav-link {
+      padding: 0.5rem 1rem; /* Adjust padding for mobile */
+      text-align: center;
+    }
+
+    .navbar .navbar-collapse {
+      background-color: #007bff !important; /* Blue background for dropdown */
+    }
+  }
+
+
+
+
+  /* Social Media Connect Banner */
+.social-connect-banner {
+    background-color: #007bff;  /* Blue background */
+    padding: 40px 20px;
+    text-align: center;
+    color: white;
+  }
+  
+  .social-connect-banner h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .social-icon {
+    display: inline-block;
+    font-size: 30px;
+    color: white; /* Ensure icons are white by default */
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 50%;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    color: #28a745;  /* Green hover effect */
+    background-color: white;  /* Make the background white on hover */
+  }
+  
+  .social-icon.facebook {
+    color: #1877f2;  /* Facebook blue */
+  }
+  
+  .social-icon.instagram {
+    color: #e1306c;  /* Instagram pink */
+  }
+  
+  .social-icon.twitter {
+    color: #1da1f2;  /* Twitter blue */
+  }
+  
+  .social-icon.linkedin {
+    color: #0077b5;  /* LinkedIn blue */
+  }
+  
+  .social-icon i {
+    margin: 0;
+    font-size: 24px;  /* Make the icons smaller */
+  }
+  
+
+  /* Footer Styling */
+.footer {
+    background-color: #343a40; /* Dark background for footer */
+    color: white;
+    padding: 40px 20px;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-section h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  .footer-section p, .footer-section ul {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .footer-section ul {
+    padding-left: 20px;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section a {
+    color: #28a745; /* Green links */
+    text-decoration: none;
+  }
+  
+  .footer-section a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #23272b; /* Darker background for bottom section */
+    color: #adb5bd;
+    font-size: 14px;
+  }
+  
+  /* Responsive design for small screens */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .footer-section {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+  

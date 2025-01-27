@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Children's Medical Centre - Jinja Branch</title>
+    
+    <!-- CSS Libraries -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+    --primary-color: #0056b3;
+    --secondary-color: #6c757d;
+    --accent-color: #28a745;
+    --light-background: #f8f9fa;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Advanced Navbar Styling */
+.navbar {
+    background-color: rgba(0,86,179,0.95);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f8f9fa !important;
+    transform: scale(1.05);
+}
+
+/* Style for the logo */
+.navbar-brand {
+    padding: 0;
+    margin: 0;
+}
+
+/* Style the logo image to be circular */
+.navbar-brand img {
+    max-height: 50px; /* Adjust logo size */
+    width: 50px; /* Set fixed width to make the image a circle */
+    height: 50px; /* Set fixed height to make the image a circle */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image covers the circular area without distortion */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+/* Hover effect for the logo */
+.navbar-brand img:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+}
+
+/* Responsive logo */
+.navbar-brand img {
+    display: block;
+    max-width: 100%; /* Ensures the logo scales proportionally */
+}
+
+        
+        /* Hero Slider */
+        #heroSlider .carousel-item {
+            height: 85vh;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,86,179,0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+
+        
+        
+        /* Sections */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-header::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 10px auto;
+        }
+        
+        /* Service Cards */
+        .service-card {
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            #heroSlider .carousel-item {
+                height: 50vh;
+            }
+        }
+
+
+        
+
+        
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar">
+    <!-- Navigation -->
+    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/ROYAL LOGO.png" alt="Royal Children's Medical Centre Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">About Us</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="branch2History.html">Branch History</a>
+                            <a class="dropdown-item" href="branch2VissionMission.html">Mission & Vision</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="branch2pediatrics.html">Pediatric Services</a>
+                            <a class="dropdown-item" href="#specialized-clinics">Specialized Clinics</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="branch2 Spacialists.html">Specialists</a></li>
+                    <li class="nav-item"><a class="nav-link" href="branch2location.html">Branch Locator</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-light" href="make an appointment.html">Book Appointment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home.html">Branch 1</a></li>
+                    <li class="nav-item"><a class="nav-link" href="News Letters.html">News letters</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Slider -->
+    <section id="home">
+        <div id="heroSlider" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="background-image: url('/api/placeholder/1200/800');">
+                    <div class="hero-overlay">
+                        <div class="container">
+                            <h1 class="display-4 animate__animated animate__fadeInDown">Expanding Our Care for Your Family</h1>
+                            <p class="lead animate__animated animate__fadeInUp">Advanced Pediatric Healthcare in Jinja</p>
+                            <a href="make an appointment.html" class="btn btn-light btn-lg mt-3 animate__animated animate__pulse">Book an Appointment</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Additional carousel items would be added similarly -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Branch Introduction -->
+    <section id="branch-intro" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Welcome to Our Jinja Branch</h2>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="lead">Our new branch in Jinja offers exceptional pediatric care with state-of-the-art facilities, ensuring your children's health is our top priority.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="images/branch2.jpg" alt="Branch Facility" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-5">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-stethoscope fa-3x text-primary mb-3"></i>
+                            <h4>Pediatric Consultations</h4>
+                            <p>Comprehensive health assessments for children of all ages.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-syringe fa-3x text-success mb-3"></i>
+                            <h4>Immunization Center</h4>
+                            <p>Complete vaccination programs following international guidelines.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-microscope fa-3x text-info mb-3"></i>
+                            <h4>Diagnostic Services</h4>
+                            <p>Advanced laboratory and imaging services for accurate diagnosis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialists Section -->
+    <section id="specialists" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our Specialists</h2>
+            </div>
+            <div class="row">
+                <!-- Specialist 1 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="/images/l1.jpg" class="card-img-top" alt="Dr. Jane Doe">
+                        <div class="card-body text-center">
+                            <h5>Dr. Jane Doe</h5>
+                            <p>Head of Pediatrics</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Specialist 2 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/l2.jpg" class="card-img-top" alt="Dr. John Smith">
+                        <div class="card-body text-center">
+                            <h5>Dr. John Smith</h5>
+                            <p>Chief Cardiologist</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Specialist 3 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/l3.jpg" class="card-img-top" alt="Dr. Emily Johnson">
+                        <div class="card-body text-center">
+                            <h5>Dr. Emily Johnson</h5>
+                            <p>Neurologist</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Specialist 4 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/l8.jpg" class="card-img-top" alt="Dr. Mark Lee">
+                        <div class="card-body text-center">
+                            <h5>Dr. Mark Lee</h5>
+                            <p>Orthopedic Surgeon</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Specialist 5 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/l1.jpg" class="card-img-top" alt="Dr. Sarah Brown">
+                        <div class="card-body text-center">
+                            <h5>Dr. Sarah Brown</h5>
+                            <p>Oncologist</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Specialist 6 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/l3.jpg" class="card-img-top" alt="Dr. David Wilson">
+                        <div class="card-body text-center">
+                            <h5>Dr. David Wilson</h5>
+                            <p>Dermatologist</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Specialist 7 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/l2.jpg" class="card-img-top" alt="Dr. Anna Martinez">
+                        <div class="card-body text-center">
+                            <h5>Dr. Anna Martinez</h5>
+                            <p>Psychiatrist</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Specialist 8 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/l9.jpg" class="card-img-top" alt="Dr. Michael Green">
+                        <div class="card-body text-center">
+                            <h5>Dr. Michael Green</h5>
+                            <p>General Practitioner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>+256 987 654 321<br>jinja.branch@royalchildrens.org</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white">Home</a></li>
+                        <li><a href="#services" class="text-white">Services</a></li>
+                        <li><a href="#book-appointment" class="text-white">Book Appointment</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p>&copy; 2024 Royal Children's Medical Centre. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
+</html>

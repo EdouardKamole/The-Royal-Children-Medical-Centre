@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branch History - Royal Children's Medical Centre</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="b">
+    <style>
+        :root {
+    --primary-color: #0056b3;
+    --secondary-color: #6c757d;
+    --accent-color: #28a745;
+    --light-background: #f8f9fa;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Advanced Navbar Styling */
+.navbar {
+    background-color: rgba(0,86,179,0.95);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f8f9fa !important;
+    transform: scale(1.05);
+}
+
+/* Style for the logo */
+.navbar-brand {
+    padding: 0;
+    margin: 0;
+}
+
+/* Style the logo image to be circular */
+.navbar-brand img {
+    max-height: 50px; /* Adjust logo size */
+    width: 50px; /* Set fixed width to make the image a circle */
+    height: 50px; /* Set fixed height to make the image a circle */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image covers the circular area without distortion */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+/* Hover effect for the logo */
+.navbar-brand img:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+}
+
+/* Responsive logo */
+.navbar-brand img {
+    display: block;
+    max-width: 100%; /* Ensures the logo scales proportionally */
+}
+
+
+        .timeline {
+            position: relative;
+            padding: 50px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 100%;
+            background: var(--primary-color);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .timeline-content {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: calc(50% + 30px);
+            width: calc(50% - 80px);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: calc(50% + 30px);
+            width: calc(50% - 80px);
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item:nth-child(even) .timeline-content,
+            .timeline-item:nth-child(odd) .timeline-content {
+                margin-left: 80px;
+                width: calc(100% - 120px);
+            }
+            
+            .timeline-marker {
+                left: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <body data-bs-spy="scroll" data-bs-target="#mainNavbar">
+        <!-- Navigation -->
+        <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="images/ROYAL LOGO.png" alt="Royal Children's Medical Centre Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="branch2.html">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">About Us</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="branch2History.html">Branch History</a>
+                                <a class="dropdown-item" href="branch2VissionMission.html">Mission & Vision</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="branch2pediatrics.html">Pediatric Services</a>
+                                <a class="dropdown-item" href="#specialized-clinics">Specialized Clinics</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="branch2 Spacialists.html">Specialists</a></li>
+                        <li class="nav-item"><a class="nav-link" href="branch2location.html">Branch Locator</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-light" href="make an appointment.html">Book Appointment</a></li>
+                        <li class="nav-item"><a class="nav-link" href="home.html">Branch 1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="NewsLetter.html">News letters</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+            <br>
+            <br>
+            <br>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h1 class="display-4">Our Branch History</h1>
+                <p class="lead text-muted">A Journey of Compassionate Pediatric Care</p>
+            </div>
+        </div>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-marker">2022</div>
+                <div class="timeline-content">
+                    <h4>Branch Establishment</h4>
+                    <p>Founded by Dr. Elizabeth Namukasa to extend pediatric healthcare to Eastern Uganda. Initial services launched with a focus on community health.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-marker">2023</div>
+                <div class="timeline-content">
+                    <h4>Expanding Diagnostic Capabilities</h4>
+                    <p>Invested in state-of-the-art imaging equipment to provide advanced diagnostic services for children in the region.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-marker">2024</div>
+                <div class="timeline-content">
+                    <h4>Specialized Clinic Expansion</h4>
+                    <p>Introduced specialized pediatric subspecialty clinics including Pediatric Cardiology, Neonatology, and Child Nutrition Programs.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Our Founding Vision</h5>
+                        <p>To provide accessible, advanced, and compassionate pediatric healthcare to underserved communities in Eastern Uganda.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Community Impact</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Reduced child mortality rates</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Free immunization programs</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Specialized pediatric care</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Footer -->
+     <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>+256 987 654 321<br>jinja.branch@royalchildrens.org</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white">Home</a></li>
+                        <li><a href="#services" class="text-white">Services</a></li>
+                        <li><a href="#book-appointment" class="text-white">Book Appointment</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p>&copy; 2024 Royal Children's Medical Centre. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation for timeline items
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            timelineItems.forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>
