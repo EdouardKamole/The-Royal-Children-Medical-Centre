@@ -177,7 +177,7 @@ html, body {
   .right-side h2 {
     font-family: "Times New Roman", Times, serif;
     color: #28a745;
-    font-size: 30px;
+    font-size: 15px;
     margin-bottom: 20px;
   }
   
@@ -526,11 +526,11 @@ html, body {
 
 
 
-  /* About KHL Section */
+  /* About RCMC Section - Updated CSS */
 .about-khl-section {
-    background-color: #f4f4f4; /* Light background */
-    padding: 40px 20px; /* Add padding around the section */
-    font-family: 'Arial', sans-serif; /* Clean font */
+  background-color: #f4f4f4; /* Light background */
+  padding: 60px 20px; /* Increased padding for better spacing */
+  font-family: 'Arial', sans-serif; /* Clean font */
 }
 
 .about-khl-content {
@@ -553,9 +553,15 @@ html, body {
 }
 
 .left-side p {
-    font-size: 18px;
-    color: #555;
-    line-height: 1.6;
+  font-size: 16px; /* Slightly reduced for better readability */
+  color: #444; /* Darker shade for better contrast */
+  line-height: 1.8; /* Increased line height for better readability */
+  margin-bottom: 20px; /* Consistent spacing between paragraphs */
+  text-align: justify; /* Justified text for clean edges */
+  font-family: 'Arial', sans-serif;
+  hyphens: auto; /* Enable hyphenation for better word breaks */
+  word-wrap: break-word; /* Ensures words break properly */
+  max-width: 100%; /* Ensure text stays within its container */
 }
 
 .right-side {

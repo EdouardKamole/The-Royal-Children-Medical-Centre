@@ -53,6 +53,14 @@
     border-radius: 5px;
   }
 
+
+  .logo img {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Ensure the height matches the width */
+    border-radius: 40%; /* This makes the image circular */
+    object-fit: cover; /* Ensures the image maintains its aspect ratio and fills the circle */
+    transition: transform 0.3s ease-in-out; /* Optional smooth transition */
+}
   /* Responsive Navbar */
   @media (max-width: 992px) {
     .navbar .navbar-nav {

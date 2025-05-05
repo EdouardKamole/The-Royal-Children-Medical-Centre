@@ -543,7 +543,7 @@ body {
   }
   
   .gallery-image {
-    width: 18%;
+    width: 16%;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     object-fit: cover; /* Ensures the image fits well */

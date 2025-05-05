@@ -1,5 +1,3 @@
-
-
 document.addEventListener('scroll', function () {
     const topNavbar = document.querySelector('.top-navbar');
     const mainNavbar = document.querySelector('.main-navbar');
@@ -27,10 +25,6 @@ departments.forEach(department => {
   });
 });
 
-
-
-
-
 // JavaScript for Scroll Event
 let lastScrollTop = 0;
 const banner = document.querySelector('.scroll-banner');
@@ -48,28 +42,26 @@ window.addEventListener('scroll', function () {
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
 });
 
-
-
-
 // Initialize EmailJS
 emailjs.init("i3ZSoMnIWI1x_CWAg"); // Replace with your Public Key
 
 // Handle form submission
 document.getElementById("contact-form").addEventListener("submit", function (e) {
     e.preventDefault();
-
+    
     const serviceID = "service_0tkcbbe";
     const templateID = "template_vn7dkip";
-
-    // Collect form data
+    
+    // Collect form data with CORRECT parameter names matching your template
     const templateParams = {
-        name: document.getElementById("name").value,
-        phone: document.getElementById("phone").value,
-        email: document.getElementById("email").value,
-        address: document.getElementById("address").value,
+        to_name: "Your Name", // Replace with your name or company name that receives emails
+        from_name: document.getElementById("name").value,
+        from_email: document.getElementById("email").value,
+        from_address: document.getElementById("address").value,
         message: document.getElementById("message").value,
+        phone: document.getElementById("phone").value // Also including phone although not in the template example
     };
-
+    
     // Send the email
     emailjs.send(serviceID, templateID, templateParams)
         .then(response => {
@@ -81,19 +73,3 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
             console.error("EmailJS Error:", error);
         });
 });
-
- // Initialize the Google Map
- function initMap() {
-    const location = { lat: 0.4565, lng: 32.5706 }; // Gayaza, Kampala coordinates
-    const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 12,
-        center: location,
-    });
-
-    // Add a marker
-    new google.maps.Marker({
-        position: location,
-        map: map,
-        title: "Gayaza, Kampala",
-    });
-}
