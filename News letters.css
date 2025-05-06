@@ -74,6 +74,14 @@ ul {
     will-change: position !important;
 }
 
+.nav-link.active {
+  color: #fff !important;
+  font-weight: bold;
+  background-color: #0056b3 !important;
+  border-radius: 5px;
+  padding: 8px 12px;
+}
+
 /* Ensure navbar stays fixed during scroll */
 body {
     padding-top: 90px;
